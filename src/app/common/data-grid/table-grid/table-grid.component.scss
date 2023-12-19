@@ -1,0 +1,129 @@
+@import "_colors";
+@import "_spacing";
+@import "_typography";
+@import "_shadows";
+@import "_breakpoints";
+@import "_borders";
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-stack;
+  font-weight: $body-font-weight;
+  box-shadow: $box-shadow;
+  padding: $spacing-sm;
+  border-radius: $border-radius;
+  color: $text-color;
+  position: relative;
+  .loading-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.55);
+  }
+
+  table {
+    margin-top: $spacing-sm;
+    background-color: none;
+    overflow: scroll;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    padding: $spacing-sm;
+    top: 0;
+    border-bottom: $border-color 1px solid;
+  }
+
+  thead tr {
+    text-align: left;
+  }
+
+  thead th[sortable="true"] {
+    cursor: pointer;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: $background-color-secondary;
+  }
+
+  td {
+    padding: $spacing-sm;
+  }
+  .table-head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: $spacing-sm;
+    margin-top: $spacing-lg;
+
+    @include sm {
+      flex-direction: row;
+    }
+  }
+  .column-name {
+    display: flex;
+    gap: 2px;
+  }
+  .table-head .title {
+    font-size: $font-size-lg;
+    font-weight: $heading-font-weight;
+    margin-left: 0;
+
+    @include sm {
+      margin-left: $spacing-sm;
+    }
+  }
+
+  .table-content {
+    overflow: hidden;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pagination-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: $border-color 1px solid;
+    margin-top: $spacing-sm;
+    padding: $spacing-sm;
+    padding-top: $spacing-sm;
+    gap: $spacing-sm;
+
+    @include sm {
+      flex-direction: row;
+    }
+
+    .pagination-buttons {
+      display: flex;
+      gap: $spacing-lg;
+      button {
+        border: none;
+        cursor: pointer;
+        background: none;
+      }
+      button:disabled {
+        border: none;
+        cursor: not-allowed;
+      }
+    }
+    .pagination-data {
+      color: $text-color-secondary;
+      .bold {
+        font-weight: 600;
+      }
+    }
+  }
+  .error {
+    color: red;
+  }
+}

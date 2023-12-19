@@ -1,0 +1,24 @@
+<div (click)="onRouteClick()" [ngClass]="{ sidebar: true, closed: !isOpen }">
+  <a routerLink="/" [attr.selected]="currentUrl === '/' ? true : null">
+    <icon-component
+      [iconId]="'arrow-right'"
+      [height]="'10'"
+      [width]="'10'"
+      [fill]="'#FA4616'"
+    ></icon-component>
+    <span>Data Table</span></a
+  >
+  <a
+    routerLink="/progress"
+    [attr.selected]="currentUrl === '/progress' ? true : null"
+  >
+    <icon-component
+      [iconId]="'arrow-right'"
+      [height]="'10'"
+      [width]="'10'"
+      [fill]="'#FA4616'"
+    ></icon-component>
+    <span>Progress</span></a
+  >
+</div>
+<div class="sidebar-spacer"></div>

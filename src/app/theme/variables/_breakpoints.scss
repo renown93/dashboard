@@ -1,0 +1,40 @@
+$breakpoint-xs: 0; // Extra small devices (portrait phones)
+$breakpoint-sm: 576px; // Small devices (landscape phones)
+$breakpoint-md: 768px; // Medium devices (tablets)
+$breakpoint-lg: 992px; // Large devices (desktops)
+$breakpoint-xl: 1200px; // Extra large devices (large desktops)
+
+// Small devices
+@mixin xs {
+  @media (min-width: #{$breakpoint-xs}) {
+    @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$breakpoint-sm}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$breakpoint-xl}) {
+    @content;
+  }
+}

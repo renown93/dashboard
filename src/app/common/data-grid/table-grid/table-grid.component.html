@@ -1,0 +1,94 @@
+<div class="table-container">
+  <div *ngIf="data.isLoading" class="loading-shadow">
+    <t-progress></t-progress>
+  </div>
+  <div class="table-head">
+    <div class="title">{{ data.title }}</div>
+    <div>
+      Show
+      <select
+        #selectEl
+        (ngModelChange)="
+          onPageinationChange($event, 1, convertString(selectEl.value))
+        "
+        [(ngModel)]="data.limit"
+      >
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+        <option value="0">All</option>
+      </select>
+      elements
+    </div>
+  </div>
+  <div class="table-content">
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th
+            *ngFor="let column of columns"
+            (click)="onSortChange($event, column)"
+            [attr.sortable]="column.sortable ? true : null"
+          >
+            <div class="column-name">
+              {{ column.name }}
+              <icon-component
+                *ngIf="data.orderId === column.property"
+                [iconId]="'sortable'"
+                [height]="'12'"
+                [width]="'12'"
+                [fill]="'black'"
+              ></icon-component>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data.items">
+          <td *ngFor="let column of columns">
+            {{ item[column.property] }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container">
+    <div class="pagination-data">
+      Showing <span class="bold">{{ data.skip + 1 }}</span> to
+      <span *ngIf="data.limit !== 0" class="bold">
+        {{
+          data.skip + 1 * data.limit > data.total
+            ? data.total
+            : data.skip + 1 * data.limit
+        }}
+      </span>
+      <span *ngIf="data.limit === 0" class="bold">
+        {{ data.total }}
+      </span>
+      of
+      <span class="bold"> {{ data.total }}</span>
+    </div>
+
+    <div class="pagination-buttons">
+      <button
+        [attr.disabled]="data.currentPage === 1 ? true : null"
+        (click)="onPageinationChange($event, data.currentPage - 1, data.limit)"
+      >
+        << Previous
+      </button>
+      <div>
+        Page {{ data.currentPage }} of
+        {{ data.totalPage }}
+      </div>
+      <button
+        [attr.disabled]="data.currentPage === data.totalPage ? true : null"
+        (click)="onPageinationChange($event, data.currentPage + 1, data.limit)"
+      >
+        Next >>
+      </button>
+    </div>
+  </div>
+  <div class="error" *ngIf="data.error">{{ data.error }}</div>
+</div>

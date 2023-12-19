@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="toggle-sidebar-btn" (click)="onToggle()">
+    <icon-component
+      *ngIf="!isSidebarOpen"
+      [iconId]="'hamburger'"
+      [height]="'42'"
+      [width]="'42'"
+      [fill]="'#FA4616'"
+    ></icon-component>
+    <icon-component
+      *ngIf="isSidebarOpen"
+      [iconId]="'close-circle'"
+      [height]="'42'"
+      [width]="'42'"
+      [fill]="'#FA4616'"
+    ></icon-component>
+  </div>
+  <div>
+    <h1 class="title">UI Path assignment</h1>
+    <div class="sub-title">Mujdat Yagiz Yazicilar</div>
+  </div>
+</div>
+<div style="height: 80px"></div>

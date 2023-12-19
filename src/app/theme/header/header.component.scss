@@ -1,0 +1,36 @@
+@import "_colors";
+@import "_spacing";
+@import "_typography";
+@import "_shadows";
+@import "_breakpoints";
+
+.header {
+  font-family: $font-stack;
+  padding: 12px 8px;
+  box-shadow: $box-shadow;
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  z-index: 2;
+  height: 74px;
+  .title {
+    font-size: $font-size-xl;
+    color: $primary-color;
+  }
+  .sub-title {
+    color: $text-color-secondary;
+    padding-left: 2px;
+  }
+  .toggle-sidebar-btn {
+    margin-right: 18px;
+    margin-left: 12px;
+    margin-top: 4px;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    @include md {
+      display: none;
+    }
+  }
+}

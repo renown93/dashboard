@@ -1,0 +1,83 @@
+<div style="width: 100%">
+  <div class="section">
+    <h1>Data Table</h1>
+    <p>Tables display sets of data. They can be fully customized.</p>
+  </div>
+  <div class="section">
+    <t-grid
+      [data]="productsData"
+      [sortable]="true"
+      (paginationChange)="performFetch($event)"
+      (sortChange)="performSort($event)"
+    >
+      <t-column [name]="'ID'" [property]="'id'" [sortable]="true"></t-column>
+      <t-column
+        [name]="'Title'"
+        [property]="'title'"
+        [sortable]="false"
+      ></t-column>
+      <t-column
+        [name]="'Description'"
+        [property]="'description'"
+        [sortable]="true"
+      ></t-column>
+      <t-column
+        [name]="'Price'"
+        [property]="'price'"
+        [sortable]="true"
+      ></t-column>
+      <t-column
+        [name]="'Stock'"
+        [property]="'stock'"
+        [sortable]="true"
+      ></t-column>
+    </t-grid>
+  </div>
+  <div class="section">
+    <h4>Features</h4>
+    <ul style="margin-left: 12px">
+      <li>sortable headers</li>
+      <li>paginaton - back, forward buttons; total</li>
+      <li>page size selector</li>
+    </ul>
+  </div>
+  <div class="section">
+    <h4>Sample Usage</h4>
+    <pre>
+      <code>
+    &lt;t-grid
+      [data]="productsData"
+      [sortable]="true"
+      (paginationChange)="performFetch($event)"
+      (sortChange)="performSort($event)"
+    &gt;
+      &lt;t-column 
+        [name]="'ID'"
+        [property]="'id'" 
+        [sortable]="false"
+      &gt;&lt;/t-column&gt;
+      &lt;t-column
+        [name]="'Title'"
+        [property]="'title'"
+        [sortable]="true"
+      &gt;&lt;/t-column&gt;
+      &lt;t-column
+        [name]="'Description'"
+        [property]="'description'"
+        [sortable]="true"
+      &gt;&lt;/t-column&gt;
+      &lt;t-column
+        [name]="'Price'"
+        [property]="'price'"
+        [sortable]="true"
+      &gt;&lt;/t-column&gt;
+      &lt;t-column
+        [name]="'Stock'"
+        [property]="'stock'"
+        [sortable]="true"
+      &gt;&lt;/t-column&gt;
+    &lt;/t-grid&gt;
+    </code>
+    </pre>
+  </div>
+</div>

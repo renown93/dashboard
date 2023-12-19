@@ -1,0 +1,60 @@
+<div class="section">
+  <h1>Progress</h1>
+  <p>Progress indicator shows when the data is being lodaded.</p>
+</div>
+
+<div class="section progress-container" >
+  <div>
+    <t-progress [progress]="25" [color]="'#3C1642'"></t-progress>
+    <div class="info-container">
+      <div class="info">progress=%25</div>
+      <div class="info">color=#3C1642</div>
+    </div>
+  </div>
+  <div>
+    <t-progress [progress]="50" [color]="'#1DD3B0'"></t-progress>
+    <div class="info-container">
+      <div class="info">progress=%50</div>
+      <div class="info">color=#1DD3B0</div>
+    </div>
+  </div>
+  <div>
+    <t-progress [progress]="75" [color]="'#1DD3B0'"></t-progress>
+    <div class="info-container">
+      <div class="info">progress=%75</div>
+      <div class="info">color=#1DD3B0</div>
+    </div>
+  </div>
+  <div>
+    <t-progress [progress]="90" [color]="'#1DD3B0'"></t-progress>
+    <div class="info-container">
+      <div class="info">progress=%90</div>
+      <div class="info">color=#1DD3B0</div>
+    </div>
+  </div>
+  <div>
+    <t-progress (complete)="onComplete()"></t-progress>
+    <div class="info-container">
+      <div class="info">Default Progress</div>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h4>Features</h4>
+  Displays a circle of a defined radius in pixels. fills it according to its
+  progress input
+</div>
+
+<div class="section">
+  <h4>Sample Usage</h4>
+  <pre>
+    <code>
+      &lt;t-progress 
+        [progress]="90" 
+        [color]="'#1DD3B0'" 
+        (complete)="onComplete()"
+        &gt;&lt;/t-progress&gt;
+
+    </code>
+  </pre>
+</div>

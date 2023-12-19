@@ -1,0 +1,18 @@
+@import "_colors";
+@import "_spacing";
+@import "_typography";
+@import "_shadows";
+@import "_breakpoints";
+
+.content {
+  display: flex;
+}
+.inner-content {
+  overflow: scroll;
+  width: 100%;
+  padding: $spacing-md;
+
+  @include md {
+    padding: $spacing-lg;
+  }
+}
