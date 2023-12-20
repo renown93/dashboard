@@ -23,15 +23,16 @@
 
   top: 74px;
   left: 0px;
-  padding: $spacing-lg $spacing-sm;
+  padding: 0 $spacing-xs;
+  padding-top: $spacing-md;
   box-shadow: $box-shadow;
   display: flex;
   flex-direction: column;
   height: 100%;
   position: fixed;
   background-color: white;
-  width: 165px;
-  z-index:10;
+  width: 192px;
+  z-index: 10;
 
   &.closed {
     width: 0px;
@@ -50,6 +51,8 @@
     border-radius: $border-radius-lg;
     gap: $spacing-sm;
     font-family: $font-stack;
+  padding: $spacing-sm $spacing-lg;
+
   }
   a:hover {
     display: flex;
